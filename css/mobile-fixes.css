@@ -1,0 +1,147 @@
+/* Additional responsive fixes */
+
+/* Ensure proper spacing and alignment */
+@media (max-width: 768px) {
+    /* Center all text content in mobile */
+    .section-header {
+        text-align: center;
+    }
+    
+    /* Improve benefit cards alignment */
+    .benefits-grid {
+        place-items: center;
+    }
+    
+    .benefit-card {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    /* Fix contact section alignment */
+    .contact-details {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-item {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto var(--space-lg) auto;
+    }
+    
+    .contact-icon {
+        margin: 0 auto var(--space-sm) auto !important;
+    }
+    
+    /* Improve footer alignment */
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-links {
+        text-align: center;
+    }
+    
+    /* Better navbar z-index */
+    .navbar {
+        z-index: 9999;
+    }
+    
+    .nav-menu {
+        z-index: 9998;
+    }
+    
+    /* Fix type card badges on mobile */
+    .type-percentage-badge {
+        bottom: var(--space-sm);
+        right: var(--space-sm);
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .type-card.featured .type-percentage-badge {
+        bottom: var(--space-sm);
+    }
+    
+    .type-content {
+        padding: var(--space-lg);
+        padding-bottom: calc(var(--space-lg) + 2rem);
+    }
+}
+
+/* Improve hero section spacing */
+@media (max-width: 480px) {
+    .hero-content {
+        gap: 1rem;
+    }
+    
+    .hero-logo {
+        margin-bottom: 1rem;
+    }
+    
+    .hero-title {
+        margin-bottom: 1rem;
+    }
+    
+    .hero-description {
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-buttons {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Landscape mobile adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .hero-content {
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+    
+    .hero-logo .logo {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    
+    .hero-stats {
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+}
+
+/* Ensure gallery is properly responsive */
+@media (max-width: 480px) {
+    .gallery-item {
+        aspect-ratio: 4/3;
+    }
+}
+
+/* Form improvements for better UX */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        background: var(--secondary-color);
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}

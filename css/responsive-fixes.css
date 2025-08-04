@@ -1,0 +1,135 @@
+/* Responsive Fixes and Enhancements */
+
+/* Global mobile improvements */
+@media (max-width: 480px) {
+    /* Typography adjustments */
+    h1 { font-size: clamp(1.8rem, 5vw, 2.2rem); }
+    h2 { font-size: clamp(1.5rem, 4vw, 1.8rem); }
+    h3 { font-size: clamp(1.2rem, 3.5vw, 1.4rem); }
+    
+    /* Better touch targets */
+    .btn {
+        min-height: 44px;
+        padding: 0.8rem 1.2rem;
+    }
+    
+    .nav-link {
+        min-height: 44px;
+        padding: 1rem 2rem;
+    }
+    
+    /* Improved spacing */
+    .container {
+        padding: 0 1rem;
+    }
+    
+    /* Hero adjustments */
+    .hero-content {
+        padding: 1rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    /* Card improvements */
+    .benefit-card,
+    .type-card {
+        padding: 1.5rem;
+    }
+    
+    /* Gallery optimizations */
+    .gallery-item {
+        border-radius: 8px;
+    }
+    
+    /* Form improvements */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        min-height: 44px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+/* Tablet specific improvements */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .hero-buttons .btn {
+        flex: 1;
+        min-width: 160px;
+        max-width: 200px;
+    }
+}
+
+/* Landscape mobile adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 80px;
+        padding-bottom: 2rem;
+    }
+    
+    .hero-logo .logo {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    .hero-stats {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+}
+
+/* Large desktop enhancements */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero-logo .logo {
+        width: 280px !important;
+        height: 280px !important;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-logo .logo {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: optimize-contrast;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .hero-logo .logo {
+        animation: none;
+        opacity: 1;
+    }
+    
+    .benefit-card:hover,
+    .type-card:hover,
+    .gallery-item:hover {
+        transform: none;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .hero-logo .logo {
+        filter: brightness(0) invert(1) drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
+    }
+}
