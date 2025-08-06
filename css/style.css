@@ -39,14 +39,19 @@
     --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.2);
     
-    /* Mobile-first responsive units */
-    --section-padding: clamp(2rem, 5vw, 4rem);
-    --container-padding: clamp(1rem, 3vw, 2rem);
+    /* Mobile-first responsive units - Optimizados para 100% zoom */
+    --section-padding: clamp(2rem, 4vw, 4rem);
+    --container-padding: clamp(1rem, 2.5vw, 2rem);
 }
 
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    /* Prevenir zoom automático en navegadores */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 /* Mobile-first responsive base */
@@ -59,6 +64,11 @@ body {
     overflow-x: hidden;
     width: 100%;
     min-height: 100vh;
+    /* Mejorar renderizado y zoom */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
 }
 
 /* Progressive enhancement for larger screens */
@@ -545,6 +555,12 @@ section {
     animation: fadeInLogo 1.5s ease-out 0.5s forwards;
     display: block;
     object-fit: contain;
+    /* Mejorar calidad de renderizado */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .hero-logo .logo:hover {
@@ -2923,6 +2939,33 @@ input[type="checkbox"]:checked + .checkmark::after {
     .legal-links {
         flex-direction: column;
         gap: var(--space-xs);
+    }
+}
+
+/* Utilidades para ocultar elementos en móvil */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+/* Utilidades para mejorar calidad de imagen */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* Mejorar calidad en pantallas de alta densidad */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: bicubic;
+}
+
+/* Optimizar renderizado en dispositivos retina */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: optimize-contrast;
+        image-rendering: crisp-edges;
     }
 }
 
