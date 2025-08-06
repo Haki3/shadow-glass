@@ -714,11 +714,11 @@ section {
     }
     
     .stat-number {
-        font-size: 1.3rem;
+        font-size: 0.9rem; /* Reducido 50% desde 1.3rem */
     }
     
     .stat-label {
-        font-size: 0.65rem;
+        font-size: 0.5rem; /* Reducido 50% desde 0.65rem */
     }
 }
 
