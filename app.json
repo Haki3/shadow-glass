@@ -1,0 +1,40 @@
+{
+  "name": "ShadowGlass Website",
+  "description": "Professional window tinting services website with responsive design",
+  "repository": "https://github.com/Haki3/shadow-glass",
+  "logo": "https://shadowglass-website.herokuapp.com/assets/logo.svg",
+  "keywords": [
+    "website",
+    "responsive",
+    "window-tinting",
+    "automotive",
+    "professional-services"
+  ],
+  "image": "heroku/nodejs",
+  "stack": "heroku-22",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production"
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "description": "Install only production dependencies",
+      "value": "true"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "addons": [],
+  "scripts": {
+    "postdeploy": "echo 'ShadowGlass website deployed successfully!'"
+  }
+}

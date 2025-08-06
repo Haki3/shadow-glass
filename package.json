@@ -2,26 +2,41 @@
   "name": "shadowglass-website",
   "version": "1.0.0",
   "description": "Professional window tinting services website for ShadowGlass",
-  "main": "index.html",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
   "scripts": {
-    "start": "npx http-server . -p 3000 -o",
+    "start": "node server.js",
     "dev": "npx live-server --port=3000 --open=index.html",
     "build": "echo 'Static site - no build process needed'",
     "lint": "npx eslint js/main.js",
     "format": "npx prettier --write .",
     "validate-html": "npx html-validate index.html",
     "lighthouse": "npx lighthouse http://localhost:3000 --output html --output-path ./lighthouse-report.html",
-    "test": "echo 'No tests specified'"
+    "test": "echo 'No tests specified'",
+    "heroku-postbuild": "echo 'Post build completed'",
+    "deploy": "./deploy-heroku.sh",
+    "server": "node server.js",
+    "local": "npm run server"
   },
   "keywords": [
     "window-tinting",
     "automotive",
     "professional-services",
     "responsive-design",
-    "modern-web"
+    "modern-web",
+    "heroku"
   ],
   "author": "ShadowGlass Team",
   "license": "ISC",
+  "dependencies": {
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "helmet": "^7.2.0"
+  },
   "devDependencies": {
     "eslint": "^8.0.0",
     "html-validate": "^8.0.0",
@@ -38,10 +53,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/shadowglass/website.git"
+    "url": "https://github.com/Haki3/shadow-glass.git"
   },
   "bugs": {
-    "url": "https://github.com/shadowglass/website/issues"
+    "url": "https://github.com/Haki3/shadow-glass/issues"
   },
-  "homepage": "https://shadowglass.es"
+  "homepage": "https://shadowglass-website.herokuapp.com"
 }

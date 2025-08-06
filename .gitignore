@@ -48,6 +48,19 @@ jspm_packages/
 # Output of 'npm pack'
 *.tgz
 
+# Heroku specific
+.env
+.env.local
+.env.production
+
+# Backup files
+*-backup.*
+*-old.*
+
+# Temporary files
+*.tmp
+*.temp
+
 # Yarn Integrity file
 .yarn-integrity
 
