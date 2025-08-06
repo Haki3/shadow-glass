@@ -500,11 +500,7 @@ section {
     z-index: -2;
 }
 
-.hero-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+/* Video eliminado - causaba botón play en móvil */
 
 .hero-overlay {
     position: absolute;
@@ -688,11 +684,11 @@ section {
         padding: 0.2rem;
         min-height: calc(100vh - 80px);
         justify-content: center;
-        gap: 0.2rem;
+        gap: 0.1rem;
     }
     
     .hero-logo {
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.1rem;
         margin-top: 0;
     }
     
@@ -2944,8 +2940,11 @@ input[type="checkbox"]:checked + .checkmark::after {
 
 /* Utilidades para ocultar elementos en móvil */
 @media (max-width: 768px) {
+    .stat-item.hide-mobile,
     .hide-mobile {
         display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
     }
 }
 

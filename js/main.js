@@ -100,15 +100,8 @@ class ShadowGlass {
 
     // Hero section
     initHero() {
-        const heroVideo = document.querySelector('.hero-video');
+        // Video eliminado - causaba botón play en móvil
         
-        // Optimize video loading
-        if (heroVideo) {
-            heroVideo.addEventListener('loadeddata', () => {
-                heroVideo.style.opacity = '1';
-            });
-        }
-
         // Animate hero stats on load
         this.animateCounters();
     }
